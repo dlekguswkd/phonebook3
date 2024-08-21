@@ -144,12 +144,14 @@ public class PhonebookController {	//제어권을 갖고있음 내가 줄게
 		
 		model.addAttribute("personVo", personVo);
 		
+		// 화면 보내기 (포워드) (/WEB-INF/views/  .jsp 는 application 에 만들어놔서 생략해야함)
 		return "editForm";
+		
 	}
 	
 
 	// ---------------------------------------------------------------------------------
-	// http://localhost:8888/phonebook3/edit
+	// http://localhost:8888/phonebook3/edit 확인이 안됨 그냥 하는 행동
 	/* 수정 */
 	@RequestMapping(value="/edit", method= {RequestMethod.GET, RequestMethod.POST})
 	public String edit(@ModelAttribute PersonVo personVo) {

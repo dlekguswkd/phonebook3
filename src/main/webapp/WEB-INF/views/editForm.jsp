@@ -32,7 +32,8 @@
 		</div>
 		
 		<!-- <input type="text" name="action" value="update">  -->
-		<!-- 			 여기 name에 no가 아닌 personId로 넣어야함	 -->
+		
+		<!-- 			 여기 name에 no가 아닌 personId로 넣어야함	어느것을 바꿀것인지 알려주는 역할   -->
 		<input type="hidden" name="personId" value="${personVo.personId}">
 		<br>
 		<button type="submit">수정(전송)</button>
