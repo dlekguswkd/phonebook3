@@ -51,7 +51,7 @@ public class PhonebookService {
 
 	/* 전화번호 수정폼 */
 	public PersonVo exeEditForm(int no) {
-		System.out.println("PhonebookService.exeEditPerson()");
+		System.out.println("PhonebookService.exeEditForm()");
 		
 		PersonVo personVo = phonebookDao.getPersonOne(no);
 	
