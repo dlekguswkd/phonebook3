@@ -4,7 +4,9 @@
 
 <mapper namespace="phonebook">
 	<!-- 쿼리문작성 -->
-	<!-- id=“식별자“ parameterType=“기본자료형 또는 vo” CDATA는 여기부터 여기까지가 쿼리라는뜻 혹시 부등호> 할때 오류나는걸 잡는것 select문만 parameterType이 아닌 resultType이 와야함 (rs 떄문) -->
+	<!-- id=“식별자“ parameterType=“기본자료형 또는 vo”  -> 받는거 넣어주는거임
+	CDATA는 여기부터 여기까지가 쿼리라는뜻 혹시 부등호> 할때 오류나는걸 잡는것 
+	select문만 resultType이 와야함 (rs 떄문) -->
 
 	<!-- 삭제 -->
 	<delete id="delete" parameterType="int">
@@ -49,7 +51,7 @@
 		]]>
 	</select>
 	
-	<!--사람 정보 수정하기 1명 (수정) -->
+	<!--사람 정보 수정하기 (수정) -->
 	<update id="update" parameterType="com.javaex.vo.PersonVo">
 		<![CDATA[
 			update person 
