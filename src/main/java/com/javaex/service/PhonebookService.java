@@ -1,6 +1,7 @@
 package com.javaex.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -58,6 +59,18 @@ public class PhonebookService {
 		return personVo;
 		
 	}
+	
+	/* 전화번호 수정폼2  DB에서 MAP으로 데이터 보내줌 */
+	public Map<String, Object> exeEditForm2(int no) {
+		System.out.println("PhonebookService.exeEditForm2()");
+		//System.out.println(no);
+		
+		Map<String, Object> personMap = phonebookDao.getPersonOne2(no);
+		
+		return personMap;
+	}
+	
+	
 	
 	
 	/* 전화번호 수정 */

@@ -1,6 +1,7 @@
 package com.javaex.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.javaex.dao.PhonebookDao;
 import com.javaex.service.PhonebookService;
 import com.javaex.vo.PersonVo;
 
@@ -161,6 +161,25 @@ public class PhonebookController {	//제어권을 갖고있음 내가 줄게
 		
 	}
 	
+	
+	// http://localhost:8888/phonebook3/editform2?no=~
+	/* 수정폼2 DB에서 MAP으로 데이터 보내줌 */
+	@RequestMapping(value="/editform2", method= {RequestMethod.GET, RequestMethod.POST})
+	public String editForm2(@RequestParam("no") int no, Model model) {
+		System.out.println("PhonebookController.editForm2()");
+		//System.out.println(no);
+		
+		Map<String, Object> personMap = phonebookService.exeEditForm2(no);
+		//System.out.println(personMap);
+		
+		model.addAttribute("personMap", personMap);
+		
+		return "editForm2";
+	}
+	
+	
+	
+	
 
 	// ---------------------------------------------------------------------------------
 	// http://localhost:8888/phonebook3/edit 확인이 안됨 그냥 하는 행동
@@ -182,6 +201,7 @@ public class PhonebookController {	//제어권을 갖고있음 내가 줄게
 		
 		//리스트로 리다이렉트(redirect:인터넷주소)
 		return "redirect:/list";
+		
 		
 	}
 	
